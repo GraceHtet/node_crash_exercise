@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Hover Effect</title>
+	<style type="text/css">
+		/*:root{
+			--wth: 500px;
+			--hth: 300px;
+		}*/
+		body{
+			background-color: #272727;
+			height: 100vh;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+		}
+		.btn{
+			/*root နဲ့ မကြေငြာဘဲ (global scopeမှာ မကြေငြာဘဲ) selector ထဲမှာဝင်ကြေငြာရင် block scopeထဲ ဖြစ်သွားလို့ သူနဲ့ပဲ သက်ဆိုင်သွားတယ်*/
+			--wth: 300px;
+			--hth: 50px;
+			width: var(--wth);
+			height: var(--hth);
+			border: 1px solid #fff;
+
+			display: flex;
+			/*for em elements - inline elementတွေကိုဘေးတိုက်ပေါ်စေချင်လို့*/
+
+			position: relative;
+		}
+		.btn span{
+			/*text-align center ပေးဖို့ width ကို သတ်မှတ်ပေးဖို့လို
+			parent width အတိုင်း100% or inherit ဖြစ်ဖို့လို
+			position absoluteလည်းပေးဖို့လို့ မဟုတ်ရင် အလုပ်လုပ်
+			ဘာလို့လဲဆိုတော့  a tag ထဲမှာမှ tag ပြန်ရေးထားတာမို့
+
+			or 
+			a ထဲမှာ text align center ပေးပြီး width 100%ပြန်ပေး*/
+			width: inherit;
+			font-size: 14px;
+			font-weight: 800;
+			color: #fff;
+			text-align: center;
+			line-height: 50px;
+			text-transform: uppercase;
+			letter-spacing: 4px;
+
+			text-decoration: none;
+
+			position: absolute;
+
+			z-index: 1;
+		}
+		.btn em{
+			width: 100%;
+			height: 100%;
+			background: #fff;
+
+			/*position: absolute;*/
+			/*display: block;*/
+
+			transform: scaleX(0);
+			transform-origin: right;
+
+			transition: transform 0.5s;
+
+		}
+		.btn em:nth-child(1){
+			/*parent တွေမှာရေးတာမို့ အဝင်ရော အထွက်ရော delay ဖြစ်*/
+			transition-delay: .02s;
+			/*right: 0;*/
+		}
+		.btn em:nth-child(2){
+			transition-delay: .04s;
+			/*right: 10%;*/
+		}
+		.btn em:nth-child(3){
+			transition-delay: .06s;
+			/*right: 20%;*/
+		}
+		.btn em:nth-child(4){
+			transition-delay: .08s;
+			/*right: 30%;*/
+		}
+		.btn em:nth-child(5){
+			transition-delay: .1s;
+			/*right: 40%;*/
+		}
+		.btn em:nth-child(6){
+			transition-delay: .12s;
+			/*right: 50%;*/
+		}
+		.btn em:nth-child(7){
+			transition-delay: .14s;
+			/*right: 60%;*/
+		}
+		.btn em:nth-child(8){
+			transition-delay: .16s;
+			/*right: 70%;*/
+		}
+		.btn em:nth-child(9){
+			transition-delay: .18s;
+			/*right: 80%;*/
+		}
+		.btn em:nth-child(10){
+			transition-delay: .2s;
+			/*right: 90%;*/
+		}
+
+		.btn:hover em{
+			transform: scaleX(1);
+		}
+		.btn:hover span{
+			color: #000;
+
+			
+		}
+	</style>
+</head>
+<body>
+	<a href="#" class="btn">
+		<em></em>
+		<em></em>
+		<em></em>
+		<em></em>
+		<em></em>
+		<em></em>
+		<em></em>
+		<em></em>
+		<em></em>
+		<em></em>
+		<span>Hover Me</span>
+	</a>
+</body>
+</html>
